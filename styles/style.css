@@ -1,0 +1,25 @@
+/* search bar style start        search bar style start      search bar style start */
+
+#input-section{
+    margin: 21px auto 21px auto;
+}
+
+#search-input{
+    border: 2px solid  teal;
+    margin-right: 11px;
+    text-align: center;
+}
+
+#search-button{
+    background-color: teal;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+#search-button:hover{
+    background-color: rgb(68, 228, 228);
+    color: rgb(100, 100, 100);
+}
+
+/* search bar style end      search bar style end        search bar style end */
