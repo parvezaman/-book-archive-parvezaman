@@ -46,6 +46,7 @@ searchButton.addEventListener('click', ()=>{
 })
 
 const showSearchedResult = (docs) =>{
+    console.log(docs);
     showLength.style.display = 'block';
     showResult.textContent = '';
     
@@ -59,6 +60,7 @@ const showSearchedResult = (docs) =>{
                 <h4 class="card-title">Book Title: <span id="quered-info"> ${book.title ? book.title: 'Not provided'} </span></h4>
                 <h5 class="card-title">Author(s): <span id="quered-info"> ${book.author_name ? book.author_name:'Not Given in the database'} </span></h5>
                 <h5 class="card-title">First Published: <span id="quered-info"> ${book.first_publish_year ? book.first_publish_year: 'First publishing date is not Provided'} </span></h5>
+                <h5 class="card-title">Publisher: <span id="quered-info"> ${book.publisher ? book.publisher: 'Publisher name is not Provided'} </span></h5>
             </div>
             
           </div>
