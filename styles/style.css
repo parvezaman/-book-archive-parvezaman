@@ -26,6 +26,24 @@
 
 
 
+/* show-warning start        show-warning start       show-warning start*/
+
+#show-warning{
+    background-color: darkred;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    padding: 1rem 0 1rem 0;
+    font-weight: 600;
+    display: none;
+}
+
+
+/* show-warning end        show-warning end       show-warning end*/
+
+
+
+
 /* show search result style start   show search result style start  */
 
 #show-result{
@@ -62,4 +80,6 @@
     text-align: center;
     border-radius: 5px;
     margin: 25px auto 25px auto;
+    padding: 1rem 0 1rem 0;
+    display: none;
 }
