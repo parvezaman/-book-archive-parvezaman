@@ -25,6 +25,11 @@ searchButton.addEventListener('click', ()=>{
         .then(res => res.json())
         .then(data => {
             showSearchedResult(data.docs)
+            console.log(data.docs);
+            if(data.docs.length === 0){
+                showWarning.style.display = 'block';
+                showWarning.innerText = 'Please search for some real book';
+            }
             showLenght.innerHTML=`
             <p>${data.docs.length} results are showing out of ${data.numFound}</p>
             `;
@@ -46,7 +51,7 @@ const showSearchedResult = (docs) =>{
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i:''}-M.jpg" class="card-img-top searched-image" alt=" ">
             <div class="searched-text-content">
                 <h4 class="card-title">Book Title: <span id="quered-info"> ${book.title ? book.title: 'Not provided'} </span></h4>
-                <h5 class="card-title">Author(s): <span id="quered-info"> ${book.author_name ? book.author_name:'Not Given in database'} </span></h5>
+                <h5 class="card-title">Author(s): <span id="quered-info"> ${book.author_name ? book.author_name:'Not Given in the database'} </span></h5>
                 <h5 class="card-title">First Published: <span id="quered-info"> ${book.first_publish_year ? book.first_publish_year: 'First publishing date is not Provided'} </span></h5>
             </div>
             
