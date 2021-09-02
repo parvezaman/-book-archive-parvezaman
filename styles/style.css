@@ -23,3 +23,43 @@
 }
 
 /* search bar style end      search bar style end        search bar style end */
+
+
+
+/* show search result style start   show search result style start  */
+
+#show-result{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.searched-image{
+    height: 21rem;
+    border-radius: 3px;
+}
+.searched-text-content{
+    margin-top: 1rem;
+}
+
+#quered-info{
+    color: rgb(0, 117, 138);
+}
+
+
+
+/* show search result style end     show search result style end  */
+
+
+
+
+/* show length start    show length start       show length start */
+
+#show-length{
+    background-color: gray;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    margin: 25px auto 25px auto;
+}
