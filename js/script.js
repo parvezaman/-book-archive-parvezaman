@@ -1,13 +1,17 @@
+// all primary variavles 
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const showResult = document.getElementById('show-result');
 const showLength = document.getElementById('show-length');
 const showWarning = document.getElementById('show-warning');
 
+
+// add event listener
 searchButton.addEventListener('click', ()=>{
     const searchedText = searchInput.value;
     showResult.textContent = '';
 
+    //to filter out empty input field
     if(searchedText.length === 0){
         showWarning.style.display = 'block';
         showLength.style.display = 'block';
@@ -24,10 +28,9 @@ searchButton.addEventListener('click', ()=>{
         .then(res => res.json())
         .then(data => {
             showSearchedResult(data.docs)
-            console.log(data.docs);
+            //filter out bad strings
             if(data.docs.length === 0){
                 showLength.textContent ='';
-
                 showWarning.style.display = 'block';
                 showWarning.innerText = 'Please search for some real book';
             }
