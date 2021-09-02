@@ -46,7 +46,6 @@ searchButton.addEventListener('click', ()=>{
 })
 
 const showSearchedResult = (docs) =>{
-    console.log(docs);
     showLength.style.display = 'block';
     showResult.textContent = '';
     
