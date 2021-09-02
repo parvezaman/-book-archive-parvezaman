@@ -1,25 +1,24 @@
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const showResult = document.getElementById('show-result');
-const showLenght = document.getElementById('show-length');
+const showLength = document.getElementById('show-length');
 const showWarning = document.getElementById('show-warning');
 
 searchButton.addEventListener('click', ()=>{
     const searchedText = searchInput.value;
-    showLenght.style.display = 'block';
-    showLenght.textContent ='';
     showResult.textContent = '';
 
     if(searchedText.length === 0){
         showWarning.style.display = 'block';
+        showLength.style.display = 'block';
         showWarning.innerText = 'You have to enter some text';
-        showLenght.innerText='Not result found';
+        showLength.innerText='No result found';
+
     }
 
     else{
         showWarning.style.display = 'none';
-        console.log(searchedText);
-        const url = `http://openlibrary.org/search.json?q=${searchedText}`;
+        const url = `https://openlibrary.org/search.json?q=${searchedText}`;
 
         fetch(url)
         .then(res => res.json())
@@ -27,22 +26,26 @@ searchButton.addEventListener('click', ()=>{
             showSearchedResult(data.docs)
             console.log(data.docs);
             if(data.docs.length === 0){
+                showLength.textContent ='';
+
                 showWarning.style.display = 'block';
                 showWarning.innerText = 'Please search for some real book';
             }
-            showLenght.innerHTML=`
+            showLength.innerHTML=`
             <p>${data.docs.length} results are showing out of ${data.numFound}</p>
             `;
         })
 
         searchInput.value = '';
+        showLength.style.display = 'none';
+
     }
 })
 
 const showSearchedResult = (docs) =>{
-
+    showLength.style.display = 'block';
     showResult.textContent = '';
-    // console.log(docs);
+    
     docs.forEach(book => {
         const div = document.createElement('div');
 
@@ -60,7 +63,5 @@ const showSearchedResult = (docs) =>{
         div.classList.add('card');
         showResult.appendChild(div);
     });
-
-    
 
 }
